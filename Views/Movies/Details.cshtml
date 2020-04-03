@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/app/app.module.js"></script>
+<script src="~/Scripts/app/services/movies/movies.services.js"></script>
+<script src="~/Scripts/app/controllers/movies/detail-movie.controller.js"></script>
+
+<h2>Details</h2>
+
+<div class="container">
+    <div ng-controller="movieDetailController" ng-init="getMovieDetail()">
+        <h2>Movie name: {{movie.Name}}</h2>
+        <div class="container">
+            <div class="row col-sm-12">
+                <div class="col"><b>Release time:</b> {{movie.ReleaseTime}}</div>
+            </div>
+
+            <div class="row col-sm-12" style="display: flex">
+                <div><b>Genre:</b> {{movie.Genre}}</div>
+            </div>
+
+            <div class="row col-sm-12">
+                <div class="col"><b>Price:</b> {{movie.Price}}<</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

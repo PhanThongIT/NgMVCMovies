@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-messages.min.js"></script>
+
+<script src="~/Scripts/app/app.module.js"></script>
+<script src="~/Scripts/app/services/movies/movies.services.js"></script>
+<script src="~/Scripts/app/controllers/movies/add-movie.controller.js"></script>
+
+<div class="container " ng-controller="addController">
+    <form name="movieForm" novalidate ng-submit="movieForm.$valid ? submitCretedMovie(movie) :
+          showErrorMsg()
+          ">
+        <h4>New Movie</h4>
+        <div class="form-group">
+            <label for="movieTitle">Title</label>
+            <input type="text"
+                   class="form-control"
+                   id="movieTitle"
+                   name="title"
+                   required=""
+                   placeholder="Title..."
+                   ng-maxlength="5"
+                   ng-minlength="2"
+                   ng-model="movie.Title">
+
+
+            <div ng-messages="form.$submitted || movieForm.title.$error" ng-show="showError">
+                <small ng-message="required"
+                       class="form-text text-muted text-danger">
+                    Title is required!
+                </small>
+
+                <small ng-message="maxlength"
+                       class="form-text text-muted text-danger">
+                    Title is longger!
+                </small>
+
+                <small ng-message="minlength"
+                       class="form-text text-muted text-danger">
+                    Title is short!
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="movieTitle">Gerne</label>
+            <input type="text"
+                   class="form-control"
+                   id="movieTitle"
+                   name="gerne"
+                   required=""
+                   placeholder="Gerne..."
+                   ng-maxlength="5"
+                   ng-minlength="2"
+                   ng-model="movie.Gerne">
+
+
+            <div ng-messages="form.$submitted || movieForm.gerne.$error" ng-show="showError">
+                <small ng-message="required"
+                       class="form-text text-muted text-danger">
+                    Gerne is required!
+                </small>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="movieTitle">Price</label>
+            <input type="number"
+                   class="form-control"
+                   id="moviePrice"
+                   name="price"
+                   required=""
+                   placeholder="Price..."
+                   ng-keyup="getNumber()"
+                   ng-model="movie.Price">
+
+
+            <div ng-messages="form.$submitted || movieForm.price.$error" ng-show="showError">
+                <small ng-show="movieForm.price.$error.required"
+                       class="form-text text-muted text-danger">
+                    Price is required!
+                </small>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

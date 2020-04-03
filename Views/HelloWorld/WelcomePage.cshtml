@@ -1,0 +1,16 @@
+﻿
+
+@{
+    ViewBag.Title = "Index HelloWorld";
+}
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/app/controllers/welcome-page.controller.js"></script>
+<h2>@ViewBag.PageName</h2>
+
+<div class="container">
+    <div ng-app="welcomePageModule">
+        <div class="" ng-controller="welcomeController" ng-init="getFirstName()">
+            {{data}}
+        </div>
+    </div>
+</div>

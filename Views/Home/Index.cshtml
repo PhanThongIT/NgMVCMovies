@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="navbar-collapse collapse">
+            <h2 class="text-center text-danger" >Menu</h2>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("HelloWorld", "Index", "HelloWorld")</li>
+                <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+            </ul>
+        </div>
+    </div>
+</div>
